@@ -31,9 +31,24 @@ var createScene = function () {
     // Default intensity is 1. Let's dim the light a small amount
     light.intensity = 0.7;
 
-    var newsphere = createSphere(0, 1, 0, 2);
-    newsphere.material = hexMat('#ff0000');
+    var newsphere = createSphere(0, 1, 1, 2);
+    newsphere.material = hexMat("#5D3FD3");
+    
+    var newbox = createBox(1, 2, 3, 2, 2, 2);
+    newbox.material = hexMat("#7393B3");
 
+    //var seaGull = new meshModel('./seagulf.glb', 0.9)
+
+    var anim1 = {subj: newsphere.position, prop: 'x', val: 3};
+    var anim2 = {subj: newsphere.material, prop: 'alpha', val: 2};
+    var anim3 = {subj: newbox.rotation, prop: 'z', val: Math.PI*2};
+    var anim4 = {subj: newbox.rotation, prop: 'x', val: -5};
+    var anim5 = {subj: newbox.material, prop: 'alpha', val: 0};
+    //var anim6 = {subj: seaGull.position, prop: 'x', val: 4};
+    var anims = [anim1, anim2, anim3, anim4, anim5];
+
+    animate(anims, scene, 3, true);
+    
     // Our built-in 'ground' shape.
     var ground = BABYLON.MeshBuilder.CreateGround("ground", {width: 6, height: 6}, scene);
 
