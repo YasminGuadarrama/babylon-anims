@@ -37,15 +37,16 @@ var createScene = function () {
     var newbox = createBox(1, 2, 3, 2, 2, 2);
     newbox.material = hexMat("#7393B3");
 
-    //var seaGull = new meshModel('./seagulf.glb', 0.9)
 
-    var anim1 = {subj: newsphere.position, prop: 'x', val: 3};
-    var anim2 = {subj: newsphere.material, prop: 'alpha', val: 2};
-    var anim3 = {subj: newbox.rotation, prop: 'z', val: Math.PI*2};
-    var anim4 = {subj: newbox.rotation, prop: 'x', val: Math.sin(Math.PI)};
-    var anim5 = {subj: newbox.material, prop: 'alpha', val: 0};
-    //var anim6 = {subj: seaGull.position, prop: 'x', val: 4};
-    var anims = [anim1, anim2, anim3, anim4, anim5];
+    var anim_1 = {subj: newsphere.position, prop: 'x', val: 3};
+    var anim_2 = {subj: newsphere.material, prop: 'alpha', val: 2};
+    var anim_3 = {subj: newbox.rotation, prop: 'z', val: Math.PI*2};
+    var anim_4 = {subj: newbox.rotation, prop: 'y', val: Math.sin(Math.PI)};
+    var anim_5 = {subj: newbox.material, prop: 'alpha', val: 0};
+    var anim_6 = {subj: newsphere.position, prop: 'alpha', val: 0};
+    var anim_7 = {subj: newbox.rotation, prop: 'y', val: Math.cos(Math.PI)};
+    var anim_8 = {subj: newbox.material, prop: 'x', val: 3};
+    var anims = [anim_1, anim_2, anim_3, anim_4, anim_5, anim_6, anim_7, anim_8];
 
     animate(anims, scene, 3, true);
     
